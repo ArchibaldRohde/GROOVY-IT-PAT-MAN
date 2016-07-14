@@ -1,8 +1,8 @@
 object Form1: TForm1
-  Left = 588
-  Top = 224
-  Width = 1139
-  Height = 791
+  Left = 1912
+  Top = 205
+  Width = 1040
+  Height = 784
   Caption = 'Form1'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,15 +13,15 @@ object Form1: TForm1
   OldCreateOrder = False
   OnCreate = FormCreate
   DesignSize = (
-    1123
-    752)
+    1024
+    745)
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 1121
-    Height = 747
+    Width = 1022
+    Height = 740
     Anchors = [akLeft, akTop, akRight, akBottom]
     Picture.Data = {
       0A544A504547496D616765BFA30300FFD8FFE000104A46494600010101004800
@@ -7479,12 +7479,11 @@ object Form1: TForm1
       7A7A489A196024E5D43EB9559E258DE2C50AFF00DFBFC91CD5D8C05B6525A8D4
       C95CAA9F1EC5F12536F955E3EA31D4D500C0595348E3825736E79C4AFCB2B26E
       9E248DF7AB4E6861634CE2BFFFD9}
-    Proportional = True
     Stretch = True
   end
   object lblTitel: TLabel
-    Left = 88
-    Top = 40
+    Left = 51
+    Top = 16
     Width = 958
     Height = 64
     Caption = 'Draadjie Maatjie'
@@ -7494,28 +7493,6 @@ object Form1: TForm1
     Font.Name = 'Blackoak Std'
     Font.Style = [fsBold, fsStrikeOut]
     ParentFont = False
-  end
-  object Label1: TLabel
-    Left = 280
-    Top = 224
-    Width = 31
-    Height = 13
-    Caption = 'Label1'
-  end
-  object Label2: TLabel
-    Left = 280
-    Top = 280
-    Width = 31
-    Height = 13
-    Caption = 'Label2'
-  end
-  object btnLogin: TButton
-    Left = 280
-    Top = 344
-    Width = 75
-    Height = 25
-    Caption = 'btnLogin'
-    TabOrder = 0
   end
   object RGBLang: TRadioGroup
     Left = 72
@@ -7528,35 +7505,69 @@ object Form1: TForm1
     Font.Height = -13
     Font.Name = 'Bodoni MT'
     Font.Style = [fsBold]
+    ItemIndex = 0
     Items.Strings = (
       'Afrikaans'
       'English')
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 0
     OnClick = RGBLangClick
   end
-  object btnNew: TButton
-    Left = 368
-    Top = 344
-    Width = 75
-    Height = 25
-    Caption = 'btnNew'
-    TabOrder = 2
-  end
-  object Edit1: TEdit
-    Left = 280
-    Top = 248
-    Width = 121
-    Height = 21
-    TabOrder = 3
-    Text = 'Edit1'
-  end
-  object Edit2: TEdit
-    Left = 280
-    Top = 304
-    Width = 121
-    Height = 21
-    TabOrder = 4
-    Text = 'Edit2'
+  object GBSign: TGroupBox
+    Left = 72
+    Top = 264
+    Width = 145
+    Height = 233
+    Caption = 'GBSign'
+    TabOrder = 1
+    object lblName: TLabel
+      Left = 12
+      Top = 36
+      Width = 37
+      Height = 13
+      Caption = 'lblName'
+    end
+    object lblPassword: TLabel
+      Left = 9
+      Top = 84
+      Width = 56
+      Height = 13
+      Caption = 'lblPassword'
+    end
+    object edtName: TEdit
+      Left = 8
+      Top = 52
+      Width = 121
+      Height = 21
+      TabOrder = 0
+      Text = 'edtName'
+    end
+    object btnLogin: TButton
+      Left = 6
+      Top = 136
+      Width = 131
+      Height = 25
+      Caption = 'btnLogin'
+      DragCursor = crHandPoint
+      TabOrder = 1
+    end
+    object btnNew: TButton
+      Left = 6
+      Top = 176
+      Width = 131
+      Height = 25
+      Caption = 'btnNew'
+      DragCursor = crHandPoint
+      TabOrder = 2
+      OnClick = btnNewClick
+    end
+    object edtPassword: TEdit
+      Left = 8
+      Top = 100
+      Width = 121
+      Height = 21
+      TabOrder = 3
+      Text = 'edtPassword'
+    end
   end
 end
