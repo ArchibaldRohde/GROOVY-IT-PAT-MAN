@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, jpeg, ExtCtrls, StdCtrls, Dmod;
+  Dialogs, jpeg, ExtCtrls, StdCtrls, DMod;
 
 type
   TForm1 = class(TForm)
@@ -22,6 +22,7 @@ type
     procedure LangChange(lang : integer);
     procedure RGBLangClick(Sender: TObject);
     procedure btnNewClick(Sender: TObject);
+    procedure btnLoginClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -56,6 +57,10 @@ begin
             arrCaptions[10] := 'Alle velde is nog nie in gevul nie!' ;
             arrCaptions[11] := 'Gebruikersnaam mag slegs uit letters bestaan!' ;
             arrCaptions[12] := 'Gebruikersnaam bestaan klaar. Wees tog meer kreatief!' ;
+            arrCaptions[13] := 'Veels geluk ';
+            arrCaptions[14] := ', u is nou `n gekwalifiseerde gebruiker!';
+            arrCaptions[15] := 'Gebruikersnaam bestaan nie' ;
+            arrCaptions[16] := 'Wagwoord verkeerd in gesleutel' ;
        end;
   1 : begin arrCaptions[1] := 'Brace yourself';
             arrCaptions[2] := 'Language: ';
@@ -69,6 +74,10 @@ begin
             arrCaptions[10] := 'All fields have not been filled in' ;
             arrCaptions[11] := 'Username should only contain letters' ;
             arrCaptions[12] := 'This username already exists, try something more creative!' ;
+            arrCaptions[13] := 'Well done ' ;
+            arrCaptions[14] := ', you are now a qualified user!' ;
+            arrCaptions[15] := 'Invallid Login, Please check username' ;
+            arrCaptions[16] := 'Invallid Login, Please check password' ;
         end;
  end;
  lblTitel.Caption := arrCaptions[1];
@@ -86,7 +95,7 @@ procedure TForm1.RGBLangClick(Sender: TObject);
 begin
 LangChange(RGBlang.ItemIndex);
 end;
-
+//////////////////////////////////////////////////////////////NEW USER
 procedure TForm1.btnNewClick(Sender: TObject);
 var
  sNewName, sNewPassword, sletter : String;
@@ -132,25 +141,49 @@ begin
   Dmod.DataModule1.TableUser['Username'] := sNewName;
   Dmod.DataModule1.TableUser['Password'] := sNewPassword;
   Dmod.DataModule1.TableUser.Post;
-  MessageDlg('Well done ' + sNewName + ', you are now a qualified user!',mtWarning,[mbOK],0);
+  MessageDlg(arrCaptions[13] + sNewName + arrCaptions[14],mtWarning,[mbOK],0);
 end;
+end;
+
+procedure TForm1.btnLoginClick(Sender: TObject);
+var
+sName, sPassword : string;
+begin
+ //////initialise/////
+  sName := edtName.text;
+  sPassword := edtPassword.text;
+  edtPassword.Text := '';
+ ///////Log in Checks and all////
+  Dmod.DataModule1.TableUser.First;
+  while NOT Dmod.DataModule1.TableUser.Eof  do
+    begin //while
+
+     if Dmod.DataModule1.TableUser['Username'] = sName then
+        break;
+
+        Dmod.DataModule1.TableUser.Next;
+    end; //while
+      if Dmod.DataModule1.TableUser.Eof then
+      begin  //if
+      MessageDlg(arrCaptions[15],mtError,[mbCancel],0);
+      edtName.Color := clred;
+      edtPassword.Color := clred;
+      exit;
+      end;   //if
+
+      if NOT (Dmod.DataModule1.TableUser['Password'] = sPassword) then
+      begin  //if pass
+      MessageDlg(arrCaptions[16],mtError,[mbCancel],0);
+      edtPassword.Color := clred;
+      edtName.Color := clteal;
+      exit;
+
+      end; //if pass
+      edtName.Color := clteal;
+      edtPassword.Color := clteal;
+/////////////////////////////////////////////////
+
 end;
 
 end.
 
-
-
-
-{ else
-  begin
-  //
-   ////////////////////
-  /////////////////
-
-
-  //
-
-
-  New_Form.Hide;
-  Home_Form.Show;
-  end;}

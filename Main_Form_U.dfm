@@ -7550,6 +7550,7 @@ object Form1: TForm1
       Caption = 'btnLogin'
       DragCursor = crHandPoint
       TabOrder = 1
+      OnClick = btnLoginClick
     end
     object btnNew: TButton
       Left = 6
