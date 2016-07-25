@@ -181,6 +181,7 @@ begin
       end; //if pass
       edtName.Color := clteal;
       edtPassword.Color := clteal;
+      
 /////////////////////////////////////////////////
 
 end;

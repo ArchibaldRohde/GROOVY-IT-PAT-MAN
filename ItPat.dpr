@@ -3,7 +3,8 @@ program ItPat;
 uses
   Forms,
   Main_Form_U in 'Main_Form_U.pas' {Form1},
-  DMod in 'DMod.pas' {DataModule1: TDataModule};
+  DMod in 'DMod.pas' {DataModule1: TDataModule},
+  Cal_Form in 'Cal_Form.pas' {Cal};
 
 {$R *.res}
 
@@ -11,5 +12,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);
   Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TCal, Cal);
   Application.Run;
 end.

@@ -1,9 +1,9 @@
-object Form1: TForm1
-  Left = 1912
-  Top = 205
-  Width = 1040
-  Height = 784
-  Caption = 'Form1'
+object Cal: TCal
+  Left = 399
+  Top = 190
+  Width = 1244
+  Height = 778
+  Caption = 'Cal'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,17 +11,16 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
-  OnCreate = FormCreate
   DesignSize = (
-    1024
-    745)
+    1228
+    739)
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
-    Top = 0
-    Width = 1025
-    Height = 745
+    Top = -104
+    Width = 1233
+    Height = 849
     Anchors = [akLeft, akTop, akRight, akBottom]
     Picture.Data = {
       0A544A504547496D616765BFA30300FFD8FFE000104A46494600010101004800
@@ -7494,81 +7493,45 @@ object Form1: TForm1
     Font.Style = [fsBold, fsStrikeOut]
     ParentFont = False
   end
-  object RGBLang: TRadioGroup
-    Left = 72
-    Top = 528
-    Width = 185
-    Height = 73
-    Caption = 'Language:'
-    Font.Charset = ANSI_CHARSET
-    Font.Color = clWindowText
-    Font.Height = -13
-    Font.Name = 'Bodoni MT'
-    Font.Style = [fsBold]
-    ItemIndex = 0
-    Items.Strings = (
-      'Afrikaans'
-      'English')
-    ParentFont = False
+  object SGCal: TStringGrid
+    Left = 56
+    Top = 112
+    Width = 529
+    Height = 185
+    ColCount = 8
+    RowCount = 7
     TabOrder = 0
-    OnClick = RGBLangClick
   end
-  object GBSign: TGroupBox
-    Left = 72
-    Top = 264
-    Width = 145
-    Height = 233
-    Caption = 'GBSign'
+  object CheckBox1: TCheckBox
+    Left = 56
+    Top = 328
+    Width = 97
+    Height = 17
+    Caption = 'CheckBox1'
     TabOrder = 1
-    object lblName: TLabel
-      Left = 12
-      Top = 36
-      Width = 37
-      Height = 13
-      Caption = 'lblName'
-    end
-    object lblPassword: TLabel
-      Left = 9
-      Top = 84
-      Width = 56
-      Height = 13
-      Caption = 'lblPassword'
-    end
-    object edtName: TEdit
-      Left = 8
-      Top = 52
-      Width = 121
-      Height = 21
-      TabOrder = 0
-      Text = 'edtName'
-    end
-    object btnLogin: TButton
-      Left = 6
-      Top = 136
-      Width = 131
-      Height = 25
-      Caption = 'btnLogin'
-      DragCursor = crHandPoint
-      TabOrder = 1
-      OnClick = btnLoginClick
-    end
-    object btnNew: TButton
-      Left = 6
-      Top = 176
-      Width = 131
-      Height = 25
-      Caption = 'btnNew'
-      DragCursor = crHandPoint
-      TabOrder = 2
-      OnClick = btnNewClick
-    end
-    object edtPassword: TEdit
-      Left = 8
-      Top = 100
-      Width = 121
-      Height = 21
-      TabOrder = 3
-      Text = 'edtPassword'
-    end
+  end
+  object CheckBox2: TCheckBox
+    Left = 56
+    Top = 360
+    Width = 97
+    Height = 17
+    Caption = 'CheckBox2'
+    TabOrder = 2
+  end
+  object CheckBox3: TCheckBox
+    Left = 56
+    Top = 392
+    Width = 97
+    Height = 17
+    Caption = 'CheckBox3'
+    TabOrder = 3
+  end
+  object Button1: TButton
+    Left = 160
+    Top = 328
+    Width = 425
+    Height = 81
+    Caption = 'Button1'
+    TabOrder = 4
   end
 end
