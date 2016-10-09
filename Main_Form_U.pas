@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, jpeg, ExtCtrls, StdCtrls, DMod;
+  Dialogs, jpeg, ExtCtrls, StdCtrls, DMod, Cal_Form, TUSER_U;
 
 type
   TForm1 = class(TForm)
@@ -34,6 +34,8 @@ var
   Form1: TForm1;
 
 implementation
+
+
 
 {$R *.dfm}
 
@@ -148,42 +150,67 @@ end;
 procedure TForm1.btnLoginClick(Sender: TObject);
 var
 sName, sPassword : string;
+i, k : integer;
+mydate, mydate2 : string;
 begin
- //////initialise/////
+ //////init//////////////////////////////////////////////////////////////////
   sName := edtName.text;
   sPassword := edtPassword.text;
   edtPassword.Text := '';
- ///////Log in Checks and all////
-  Dmod.DataModule1.TableUser.First;
-  while NOT Dmod.DataModule1.TableUser.Eof  do
-    begin //while
+ ///////Log in Checks and all///////////////////////////////////////////////////////////////////
+  Dmod.DataModule1.TableUser.First;                                                             //
+  while NOT Dmod.DataModule1.TableUser.Eof  do                                                   //
+    begin //while                                                                                 //
+                                                                                                   //
+     if Dmod.DataModule1.TableUser['Username'] = sName then                                         //
+        break;                                                                                       //
+                                                                                                      //
+        Dmod.DataModule1.TableUser.Next;                                                               //
+    end; //while                                                                                        //
+      if Dmod.DataModule1.TableUser.Eof then                                                            //
+      begin  //if                                                                                        //
+      MessageDlg(arrCaptions[15],mtError,[mbCancel],0);                                                  //
+      edtName.Color := clred;                                                                            //
+      edtPassword.Color := clred;                                                                        //
+      exit;                                                                                              //
+      end;   //if                                                                                        //
+                                                                                                        //
+      if NOT (Dmod.DataModule1.TableUser['Password'] = sPassword) then                                 //
+      begin  //if pass                                                                                //
+      MessageDlg(arrCaptions[16],mtError,[mbCancel],0);                                              //
+      edtPassword.Color := clred;                                                                   //
+      edtName.Color := clteal;                                                                     //
+      exit;                                                                                       //
+                                                                                                 //
+      end; //if pass                                                                            //
+      edtName.Color := clteal;                                                                 //
+      edtPassword.Color := clteal;                                                            //
+                                                                                           ////
+//////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////    DATABASE VIBES    /////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////
+//so die idee is om te sql en te soek vir al die naamdatums waar username voorkom en hulle te sit in sg,,,,
+// dit wil sê 'n loop deur die databasis... of eerder select... en dan ja.. gaan leer bro
+//okay objek//
 
-     if Dmod.DataModule1.TableUser['Username'] = sName then
-        break;
 
-        Dmod.DataModule1.TableUser.Next;
-    end; //while
-      if Dmod.DataModule1.TableUser.Eof then
-      begin  //if
-      MessageDlg(arrCaptions[15],mtError,[mbCancel],0);
-      edtName.Color := clred;
-      edtPassword.Color := clred;
-      exit;
-      end;   //if
 
-      if NOT (Dmod.DataModule1.TableUser['Password'] = sPassword) then
-      begin  //if pass
-      MessageDlg(arrCaptions[16],mtError,[mbCancel],0);
-      edtPassword.Color := clred;
-      edtName.Color := clteal;
-      exit;
 
-      end; //if pass
-      edtName.Color := clteal;
-      edtPassword.Color := clteal;
-      
-/////////////////////////////////////////////////
+mydate := FormatDateTime('m/d/y', now);
+for i := 1 to 3 do
+begin
+    for k := 1 to 7 do
+    begin
+     mydate2 := datetimetostr(strtodatetime(mydate) - ((i-1)*(7) + (k-1)));
+         Cal.SGCal.Cells[k,i] := mydate2;
 
+    end;
+
+end;
+Cal.Enabled := true;
+
+Cal.Visible := true;
+Self.Visible := false;
 end;
 
 end.

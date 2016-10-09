@@ -9,6 +9,7 @@ type
   TDataModule1 = class(TDataModule)
     ADOConnection1: TADOConnection;
     TableUser: TADOTable;
+    TableCalendar: TADOTable;
   private
     { Private declarations }
   public

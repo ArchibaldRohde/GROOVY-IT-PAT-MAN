@@ -1,7 +1,7 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
-  Left = 214
-  Top = 627
+  Left = 1662
+  Top = 152
   Height = 150
   Width = 215
   object ADOConnection1: TADOConnection
@@ -22,5 +22,13 @@ object DataModule1: TDataModule1
     TableName = 'User Table'
     Left = 112
     Top = 8
+  end
+  object TableCalendar: TADOTable
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    TableName = 'Calendar'
+    Left = 104
+    Top = 56
   end
 end

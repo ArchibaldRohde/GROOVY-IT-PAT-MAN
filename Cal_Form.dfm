@@ -1,8 +1,8 @@
 object Cal: TCal
-  Left = 399
-  Top = 190
-  Width = 1244
-  Height = 778
+  Left = 531
+  Top = 180
+  Width = 1121
+  Height = 734
   Caption = 'Cal'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,16 +11,18 @@ object Cal: TCal
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnActivate = FormActivate
+  OnClose = FormClose
   DesignSize = (
-    1228
-    739)
+    1105
+    695)
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
     Top = -104
-    Width = 1233
-    Height = 849
+    Width = 1110
+    Height = 805
     Anchors = [akLeft, akTop, akRight, akBottom]
     Picture.Data = {
       0A544A504547496D616765BFA30300FFD8FFE000104A46494600010101004800
@@ -7495,43 +7497,69 @@ object Cal: TCal
   end
   object SGCal: TStringGrid
     Left = 56
-    Top = 112
-    Width = 529
-    Height = 185
+    Top = 96
+    Width = 673
+    Height = 217
     ColCount = 8
-    RowCount = 7
+    DefaultColWidth = 80
+    DefaultRowHeight = 50
+    DefaultDrawing = False
+    RowCount = 4
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -7
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
   end
-  object CheckBox1: TCheckBox
+  object cbOggend: TCheckBox
     Left = 56
     Top = 328
     Width = 97
     Height = 17
-    Caption = 'CheckBox1'
+    Caption = 'cbOggend'
     TabOrder = 1
   end
-  object CheckBox2: TCheckBox
+  object cbAand: TCheckBox
     Left = 56
     Top = 360
     Width = 97
     Height = 17
-    Caption = 'CheckBox2'
+    Caption = 'cbAand'
     TabOrder = 2
   end
-  object CheckBox3: TCheckBox
+  object cbFloss: TCheckBox
     Left = 56
     Top = 392
     Width = 97
     Height = 17
-    Caption = 'CheckBox3'
+    Caption = 'cbFloss'
     TabOrder = 3
   end
-  object Button1: TButton
+  object btnRefresh: TButton
     Left = 160
     Top = 328
     Width = 425
     Height = 81
-    Caption = 'Button1'
+    Caption = 'btnRefresh'
     TabOrder = 4
+  end
+  object btnGame: TButton
+    Left = 56
+    Top = 424
+    Width = 169
+    Height = 57
+    Caption = 'btnGame'
+    TabOrder = 5
+  end
+  object Button1: TButton
+    Left = 232
+    Top = 424
+    Width = 169
+    Height = 57
+    Caption = 'Button1'
+    TabOrder = 6
+    OnClick = Button1Click
   end
 end
