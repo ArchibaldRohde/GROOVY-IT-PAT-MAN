@@ -1,6 +1,6 @@
 object Cal: TCal
-  Left = 809
-  Top = 226
+  Left = 804
+  Top = 246
   Width = 1021
   Height = 770
   Caption = 'Cal'
@@ -7496,12 +7496,12 @@ object Cal: TCal
     ParentFont = False
   end
   object SGCal: TStringGrid
-    Left = 56
+    Left = 8
     Top = 96
-    Width = 673
+    Width = 985
     Height = 217
     ColCount = 8
-    DefaultColWidth = 80
+    DefaultColWidth = 150
     DefaultRowHeight = 50
     RowCount = 4
     Font.Charset = DEFAULT_CHARSET
@@ -7553,13 +7553,21 @@ object Cal: TCal
     Caption = 'btnGame'
     TabOrder = 5
   end
-  object Button1: TButton
+  object btnResults: TButton
     Left = 232
     Top = 424
     Width = 169
     Height = 57
-    Caption = 'Button1'
+    Caption = 'btnResults'
     TabOrder = 6
-    OnClick = Button1Click
+    OnClick = btnResultsClick
+  end
+  object MediaPlayer1: TMediaPlayer
+    Left = 56
+    Top = 496
+    Width = 253
+    Height = 30
+    Visible = False
+    TabOrder = 7
   end
 end

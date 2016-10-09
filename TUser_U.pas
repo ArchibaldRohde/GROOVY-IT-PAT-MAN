@@ -9,11 +9,11 @@ uses
 type
 TUser = class(Tobject)
   constructor create(naam : string);
-  function toString : string;
   procedure fillerup;
   function getSomeDate : string;
   function getBrushed : integer;
   function getFlossed : integer;
+  function getNaam : string;
 
 private
   fNaam : string;
@@ -70,47 +70,42 @@ var
 i, k, z : integer;
 
 begin//
-//z := 1;
-  //////////////////////////////////////////Fillerup
+z := 1;
+
   for i := 1 to 3 do
-begin //
-    for k := 1 to 7 do
-    begin //
-    Dmod.Datamodule1.TableCalendar.First;
-  while NOT Dmod.DataModule1.TableCalendar.Eof do
-    begin  //
-       if( (arrDates[((i-1)*(7) + (k))] = Dmod.DataModule1.TableCalendar['Day']) and (fNaam = Dmod.DataModule1.TableCalendar['User']))then
-       begin //
-         Cal.SGCal.Cells[k,i] := arrDates[(i-1)*(7) + k];
-          somedate := arrDates[(i-1)*(7) + k];
-          showmessage(somedate);
-         if arrMorning[(i-1)*(7) + k] = true then
-         begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + #9 + 'You Brushed in the morning';  //
-                inc(fBrushedamount);
-         end; //
+  begin
+      for k := 1 to 7 do
+      begin
+         for z := 1 to 30 do
+         begin
+            if arrDates[z] = Cal.SGCal.Cells[k,i] then
+            begin
+              Cal.SGCal.Cells[k,i] := arrDates[z];
+              somedate := arrDates[z];
+              if arrMorning[z] = true then
+                    begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + #9 + 'You Brushed in the morning';  //
+                    inc(fBrushedamount);
+                     end; //
 
-         if arrNight[(i-1)*(7) + k] = true then
-         begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + #9 + 'You Brushed at night';//
-                 inc(fBrushedamount);
-         end; //
-         if arrFlossed[(i-1)*(7) + k] = true then
-         begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + #9 + 'And you flossed!'; //
-                 inc(fFlossedamount);
-         end; //
+              if arrNight[z] = true then
+                    begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + #9 + 'You Brushed at night';//
+                    inc(fBrushedamount);
+                    end; //
+               if arrFlossed[z] = true then
+                    begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + #9 + 'And you flossed!'; //
+                    inc(fFlossedamount);
+                    end; //
+            end;
 
+         end;
 
+      end;
 
-         end; //
-
-      Dmod.DataModule1.TableCalendar.Next;
-      end;//
+   end;
 
 
 
-    end;//
-end; //
-
-end;///////////////////////////////////////////////fillerup
+end;
 
 function TUser.getBrushed: integer;
 begin
@@ -122,15 +117,16 @@ begin
 result := fFlossedamount;
 end;
 
+function TUser.getNaam: string;
+begin
+ result := fNaam;
+end;
+
 function TUser.getSomeDate: string;
 begin
  result := somedate;
 end;
 
-function TUser.toString: string;
-begin
- // result := fnaam + '#' + arrDates[1] + '#' + booltostr(arrMorning[1]) + '#' + booltostr(arrNight[1]) + '#' + booltostr(arrFlossed[1]);
-end;
 
 end.
 
