@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 255
-  Top = 119
+  Left = 598
+  Top = 189
   Width = 1040
   Height = 784
   Caption = 'Main'
@@ -7570,5 +7570,14 @@ object Form1: TForm1
       TabOrder = 3
       Text = 'edtPassword'
     end
+  end
+  object Button1: TButton
+    Left = 928
+    Top = 704
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 2
+    OnClick = Button1Click
   end
 end

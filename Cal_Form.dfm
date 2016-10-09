@@ -1,8 +1,8 @@
 object Cal: TCal
-  Left = 531
-  Top = 180
-  Width = 1121
-  Height = 734
+  Left = 809
+  Top = 226
+  Width = 1021
+  Height = 770
   Caption = 'Cal'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,15 +14,15 @@ object Cal: TCal
   OnActivate = FormActivate
   OnClose = FormClose
   DesignSize = (
-    1105
-    695)
+    1005
+    714)
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
     Top = -104
-    Width = 1110
-    Height = 805
+    Width = 1010
+    Height = 824
     Anchors = [akLeft, akTop, akRight, akBottom]
     Picture.Data = {
       0A544A504547496D616765BFA30300FFD8FFE000104A46494600010101004800
@@ -7503,7 +7503,6 @@ object Cal: TCal
     ColCount = 8
     DefaultColWidth = 80
     DefaultRowHeight = 50
-    DefaultDrawing = False
     RowCount = 4
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
@@ -7544,6 +7543,7 @@ object Cal: TCal
     Height = 81
     Caption = 'btnRefresh'
     TabOrder = 4
+    OnClick = btnRefreshClick
   end
   object btnGame: TButton
     Left = 56

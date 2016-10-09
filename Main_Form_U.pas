@@ -18,11 +18,13 @@ type
     lblPassword: TLabel;
     edtPassword: TEdit;
     GBSign: TGroupBox;
+    Button1: TButton;
     procedure FormCreate(Sender: TObject);
     procedure LangChange(lang : integer);
     procedure RGBLangClick(Sender: TObject);
     procedure btnNewClick(Sender: TObject);
     procedure btnLoginClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,6 +36,8 @@ var
   Form1: TForm1;
 
 implementation
+
+uses Admin_U;
 
 
 
@@ -189,11 +193,6 @@ begin
 //////////////////////////////////////////////////////////////////////////////////////////////
 //////////////////////////    DATABASE VIBES    /////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////////////////
-//so die idee is om te sql en te soek vir al die naamdatums waar username voorkom en hulle te sit in sg,,,,
-// dit wil sê 'n loop deur die databasis... of eerder select... en dan ja.. gaan leer bro
-//okay objek//
-
-
 
 
 mydate := FormatDateTime('m/d/y', now);
@@ -211,6 +210,18 @@ Cal.Enabled := true;
 
 Cal.Visible := true;
 Self.Visible := false;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+answer : string;
+begin
+answer := inputbox('password','password','password');
+if answer = 'Admin' then
+begin
+Admin.Show;
+end;
+
 end;
 
 end.
