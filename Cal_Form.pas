@@ -15,13 +15,15 @@ type
     cbAand: TCheckBox;
     cbFloss: TCheckBox;
     btnRefresh: TButton;
-    btnGame: TButton;
+    btnSong: TButton;
     btnResults: TButton;
     MediaPlayer1: TMediaPlayer;
+    Panel1: TPanel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormActivate(Sender: TObject);
     procedure btnRefreshClick(Sender: TObject);
     procedure btnResultsClick(Sender: TObject);
+    procedure btnSongClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -109,6 +111,15 @@ begin
 end;
 
 ////////////////////////////////////////////////////////
+end;
+
+procedure TCal.btnSongClick(Sender: TObject);
+begin
+MediaPlayer1.Close;
+randomize;
+MediaPlayer1.FileName := inttostr(random(4)+1) + '.wmv';
+MediaPlayer1.Open;
+MediaPlayer1.Play;
 end;
 
 end.

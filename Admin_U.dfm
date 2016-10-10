@@ -1,7 +1,7 @@
 object Admin: TAdmin
   Left = 339
   Top = 199
-  Width = 602
+  Width = 700
   Height = 441
   Caption = 'Admin'
   Color = clBtnFace
@@ -12,14 +12,14 @@ object Admin: TAdmin
   Font.Style = []
   OldCreateOrder = False
   DesignSize = (
-    586
+    684
     402)
   PixelsPerInch = 96
   TextHeight = 13
   object DBGrid1: TDBGrid
     Left = 0
     Top = 96
-    Width = 585
+    Width = 683
     Height = 305
     Anchors = [akLeft, akTop, akRight, akBottom]
     DataSource = DataSource1
@@ -30,15 +30,15 @@ object Admin: TAdmin
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
   end
-  object Button1: TButton
-    Left = 496
+  object btnSQL: TButton
+    Left = 498
     Top = 0
     Width = 89
     Height = 89
     Anchors = [akTop, akRight]
-    Caption = 'Button1'
+    Caption = 'btnSQL'
     TabOrder = 1
-    OnClick = Button1Click
+    OnClick = btnSQLClick
   end
   object Memo1: TMemo
     Left = 0
@@ -47,6 +47,15 @@ object Admin: TAdmin
     Height = 89
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 2
+  end
+  object btnuseless: TButton
+    Left = 592
+    Top = 0
+    Width = 89
+    Height = 89
+    Caption = 'btnuseless'
+    TabOrder = 3
+    OnClick = btnuselessClick
   end
   object ADOQuery1: TADOQuery
     Active = True

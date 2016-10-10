@@ -11,11 +11,14 @@ type
     DBGrid1: TDBGrid;
     ADOQuery1: TADOQuery;
     ADOConnection1: TADOConnection;
-    Button1: TButton;
+    btnSQL: TButton;
     DataSource1: TDataSource;
     Memo1: TMemo;
-    procedure Button1Click(Sender: TObject);
+    btnuseless: TButton;
+    procedure btnSQLClick(Sender: TObject);
+    procedure btnuselessClick(Sender: TObject);
   private
+  yas : TButton;
     { Private declarations }
   public
     { Public declarations }
@@ -28,7 +31,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TAdmin.Button1Click(Sender: TObject);
+procedure TAdmin.btnSQLClick(Sender: TObject);
 begin
   ADOQuery1.Close;
   ADOQuery1.SQL.Text := memo1.Text;
@@ -38,6 +41,16 @@ begin
   DBGrid1.Refresh;
 
   showmessage(ADOQuery1.SQL.Text);
+end;
+
+procedure TAdmin.btnuselessClick(Sender: TObject);
+
+begin
+  yas.Create(Self);
+  yas.Width := 100;
+  yas.Height := 100;
+  yas.Left := random(Admin.Width)-100;
+  yas.Top := random(Admin.Height)-100;
 end;
 
 end.

@@ -1,7 +1,7 @@
 object Cal: TCal
-  Left = 804
-  Top = 246
-  Width = 1021
+  Left = 305
+  Top = 198
+  Width = 1340
   Height = 770
   Caption = 'Cal'
   Color = clBtnFace
@@ -14,15 +14,15 @@ object Cal: TCal
   OnActivate = FormActivate
   OnClose = FormClose
   DesignSize = (
-    1005
-    714)
+    1324
+    731)
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
     Top = -104
-    Width = 1010
-    Height = 824
+    Width = 1329
+    Height = 841
     Anchors = [akLeft, akTop, akRight, akBottom]
     Picture.Data = {
       0A544A504547496D616765BFA30300FFD8FFE000104A46494600010101004800
@@ -7498,7 +7498,7 @@ object Cal: TCal
   object SGCal: TStringGrid
     Left = 8
     Top = 96
-    Width = 985
+    Width = 1233
     Height = 217
     ColCount = 8
     DefaultColWidth = 150
@@ -7545,13 +7545,14 @@ object Cal: TCal
     TabOrder = 4
     OnClick = btnRefreshClick
   end
-  object btnGame: TButton
+  object btnSong: TButton
     Left = 56
     Top = 424
     Width = 169
     Height = 57
-    Caption = 'btnGame'
+    Caption = 'btnSong'
     TabOrder = 5
+    OnClick = btnSongClick
   end
   object btnResults: TButton
     Left = 232
@@ -7567,7 +7568,16 @@ object Cal: TCal
     Top = 496
     Width = 253
     Height = 30
+    Display = Panel1
     Visible = False
     TabOrder = 7
+  end
+  object Panel1: TPanel
+    Left = 592
+    Top = 328
+    Width = 689
+    Height = 385
+    Caption = 'Panel1'
+    TabOrder = 8
   end
 end
