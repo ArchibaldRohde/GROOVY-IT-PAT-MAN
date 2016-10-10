@@ -1,8 +1,8 @@
 object Cal: TCal
-  Left = 305
-  Top = 198
+  Left = 610
+  Top = 472
   Width = 1340
-  Height = 770
+  Height = 778
   Caption = 'Cal'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,14 +15,14 @@ object Cal: TCal
   OnClose = FormClose
   DesignSize = (
     1324
-    731)
+    739)
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
     Top = -104
     Width = 1329
-    Height = 841
+    Height = 849
     Anchors = [akLeft, akTop, akRight, akBottom]
     Picture.Data = {
       0A544A504547496D616765BFA30300FFD8FFE000104A46494600010101004800
@@ -7496,9 +7496,9 @@ object Cal: TCal
     ParentFont = False
   end
   object SGCal: TStringGrid
-    Left = 8
+    Left = 48
     Top = 96
-    Width = 1233
+    Width = 1217
     Height = 217
     ColCount = 8
     DefaultColWidth = 150
@@ -7516,23 +7516,23 @@ object Cal: TCal
     Left = 56
     Top = 328
     Width = 97
-    Height = 17
+    Height = 33
     Caption = 'cbOggend'
     TabOrder = 1
   end
   object cbAand: TCheckBox
     Left = 56
-    Top = 360
+    Top = 352
     Width = 97
-    Height = 17
+    Height = 33
     Caption = 'cbAand'
     TabOrder = 2
   end
   object cbFloss: TCheckBox
     Left = 56
-    Top = 392
+    Top = 384
     Width = 97
-    Height = 17
+    Height = 25
     Caption = 'cbFloss'
     TabOrder = 3
   end
@@ -7564,8 +7564,8 @@ object Cal: TCal
     OnClick = btnResultsClick
   end
   object MediaPlayer1: TMediaPlayer
-    Left = 56
-    Top = 496
+    Left = 1016
+    Top = 32
     Width = 253
     Height = 30
     Display = Panel1
@@ -7573,11 +7573,18 @@ object Cal: TCal
     TabOrder = 7
   end
   object Panel1: TPanel
-    Left = 592
+    Left = 600
     Top = 328
-    Width = 689
+    Width = 665
     Height = 385
-    Caption = 'Panel1'
     TabOrder = 8
+  end
+  object RichEdit1: TRichEdit
+    Left = 56
+    Top = 496
+    Width = 529
+    Height = 217
+    ReadOnly = True
+    TabOrder = 9
   end
 end

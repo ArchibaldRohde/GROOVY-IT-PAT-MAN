@@ -14,6 +14,8 @@ TUser = class(Tobject)
   function getBrushed : integer;
   function getFlossed : integer;
   function getNaam : string;
+  procedure newEntry(date : string; floss, og, aan : boolean);
+  procedure changeEntry(date : string; floss, og, aan : boolean);
 
 private
   fNaam : string;
@@ -25,6 +27,7 @@ private
   arrMorning : array[1..30] of boolean;
   arrNight : array[1..30] of boolean;
   arrFlossed : array[1..30] of boolean;
+  p : integer;
 
 public
 
@@ -39,6 +42,23 @@ Cal_Form;
 
 { TUser }
 
+procedure TUser.changeEntry(date: string; floss, og, aan: boolean);
+var
+i : integer;
+begin
+  for i := 1 to p do
+  begin
+    if arrDates[i] = date then
+    begin
+      arrMorning[i] := og;
+      arrNight[i] := aan;
+      arrFlossed[i] := floss;
+    end;
+
+  end;
+
+end;
+
 constructor TUser.create(naam: string);
 var
 i : integer;
@@ -46,19 +66,20 @@ begin
  fBrushedamount := 0;
  fFlossedamount := 0;
  fGamedamount := 0;
-  i := 1;
+  p := 1;
  fNaam := naam;
+ Dmod.DataModule1.TableUser.Open;
  DMOD.DataModule1.TableCalendar.First;
  While not DMOD.DataModule1.TableCalendar.Eof do
  begin
-  showmessage(Dmod.DataModule1.TableCalendar['User'] + Dmod.DataModule1.TableCalendar['Day']);
+ 
    if Dmod.DataModule1.TableCalendar['User'] = fNaam then
      begin
-       arrDates[i] := Dmod.DataModule1.TableCalendar['Day'];
-       arrMorning[i] := Dmod.DataModule1.TableCalendar['Morning'];
-       arrNight[i] := Dmod.DataModule1.TableCalendar['Night'];
-       arrFlossed[i] := Dmod.DataModule1.TableCalendar['Flossed'];
-       inc(i);
+       arrDates[p] := Dmod.DataModule1.TableCalendar['Day'];
+       arrMorning[p] := Dmod.DataModule1.TableCalendar['Morning'];
+       arrNight[p] := Dmod.DataModule1.TableCalendar['Night'];
+       arrFlossed[p] := Dmod.DataModule1.TableCalendar['Flossed'];
+       inc(p);
      end;
    Dmod.DataModule1.TableCalendar.Next;
  end;
@@ -83,18 +104,20 @@ z := 1;
               Cal.SGCal.Cells[k,i] := arrDates[z];
               somedate := arrDates[z];
               if arrMorning[z] = true then
-                    begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + #9 + 'You Brushed in the morning';  //
+                    begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + ' M ';  //
                     inc(fBrushedamount);
                      end; //
 
               if arrNight[z] = true then
-                    begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + #9 + 'You Brushed at night';//
+                    begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + ' N ';//
                     inc(fBrushedamount);
                     end; //
                if arrFlossed[z] = true then
-                    begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + #9 + 'And you flossed!'; //
+                    begin Cal.SGCal.Cells[k,i] := Cal.SGCal.Cells[k,i] + ' F '; //
                     inc(fFlossedamount);
                     end; //
+
+                    
             end;
 
          end;
@@ -127,6 +150,15 @@ begin
  result := somedate;
 end;
 
+procedure TUser.newEntry(date: string; floss, og, aan: boolean);
+begin
+  inc(p);
+  arrDates[p] := date;
+  arrMorning[p] := og;
+  arrNight[p] := aan;
+  arrFlossed[p] := floss;
+
+end;
 
 end.
 

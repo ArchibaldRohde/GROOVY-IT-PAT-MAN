@@ -18,9 +18,10 @@ type
     procedure btnSQLClick(Sender: TObject);
     procedure btnuselessClick(Sender: TObject);
   private
-  yas : TButton;
+
     { Private declarations }
   public
+   yas : TButton;
     { Public declarations }
   end;
 
@@ -46,11 +47,13 @@ end;
 procedure TAdmin.btnuselessClick(Sender: TObject);
 
 begin
-  yas.Create(Self);
+yas := TButton.Create(Admin);
   yas.Width := 100;
   yas.Height := 100;
-  yas.Left := random(Admin.Width)-100;
-  yas.Top := random(Admin.Height)-100;
+  yas.Left := 100;
+  yas.Top := 100;
+  yas.Visible := true;
+  yas.BringToFront;
 end;
 
 end.

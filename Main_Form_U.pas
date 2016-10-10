@@ -4,7 +4,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
-  Dialogs, jpeg, ExtCtrls, StdCtrls, DMod, Cal_Form, TUSER_U;
+  Dialogs, jpeg, ExtCtrls, StdCtrls, DMod, TUSER_U;
 
 type
   TForm1 = class(TForm)
@@ -28,7 +28,7 @@ type
   private
     { Private declarations }
   public
-    arrCaptions : array [1..20] of string;
+    arrCaptions : array [1..50] of string;
     { Public declarations }
   end;
 
@@ -37,7 +37,7 @@ var
 
 implementation
 
-uses Admin_U;
+uses Admin_U, cal_Form;
 
 
 
@@ -67,6 +67,17 @@ begin
             arrCaptions[14] := ', u is nou `n gekwalifiseerde gebruiker!';
             arrCaptions[15] := 'Gebruikersnaam bestaan nie' ;
             arrCaptions[16] := 'Wagwoord verkeerd in gesleutel' ;
+
+            arrCaptions[17] := 'Borsel in Oggend';
+            arrCaptions[18] := 'Borsel in Aand';
+            arrCaptions[19] := 'Vlos dagliks';
+            arrCaptions[20] := 'Herlaai die kalender';
+            arrCaptions[21] := 'Speel `n borselliedjie';
+            arrCaptions[22] := 'Vertoon resultate';
+            arrCaptions[23] := 'Hierdie is die kalender!' + #10 + 'Hierop vertoon al die kere wat jy geborsel en gevlos het!' + #10 +
+                                'Druk die herlaai knoppie om nuwe data in te lees en om die kalender te herlaai!' + #10 +
+                                'Daarna kan jy die resultate knoppie druk en sien hoe jy sover vorder.' + #10 +
+                                'Jy kan ook met daardie knoppie die resultate na `n teksleër stoor.';
        end;
   1 : begin arrCaptions[1] := 'Brace yourself';
             arrCaptions[2] := 'Language: ';
@@ -84,6 +95,17 @@ begin
             arrCaptions[14] := ', you are now a qualified user!' ;
             arrCaptions[15] := 'Invallid Login, Please check username' ;
             arrCaptions[16] := 'Invallid Login, Please check password' ;
+
+            arrCaptions[17] := 'Brush in the morning';
+            arrCaptions[18] := 'Brush at night';
+            arrCaptions[19] := 'Floss dayly';
+            arrCaptions[20] := 'Refresh Calendar';
+            arrCaptions[21] := 'Play a Brush-Song';
+            arrCaptions[22] := 'Display Results';
+            arrCaptions[23] := 'This is the Calendar' + #10 + 'This shows every time you brushed and flossed.' + #10 +
+                                'Press the refresh button to enter new data or simply to refresh the calendar!' + #10 +
+                                'Afterwards you can press the results button, which will tell you how you are doing!' + #10 +
+                                'From here you can also store data to a textfile';
         end;
  end;
  lblTitel.Caption := arrCaptions[1];
@@ -95,6 +117,8 @@ begin
  btnLogin.Caption := arrCaptions[7];
  btnNew.caption := arrCaptions[8];
  GBSign.Caption := arrCaptions[9];
+
+
 end;
 
 procedure TForm1.RGBLangClick(Sender: TObject);

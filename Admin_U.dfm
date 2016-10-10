@@ -1,6 +1,6 @@
 object Admin: TAdmin
-  Left = 339
-  Top = 199
+  Left = 855
+  Top = 454
   Width = 700
   Height = 441
   Caption = 'Admin'
@@ -36,7 +36,7 @@ object Admin: TAdmin
     Width = 89
     Height = 89
     Anchors = [akTop, akRight]
-    Caption = 'btnSQL'
+    Caption = 'SQL'
     TabOrder = 1
     OnClick = btnSQLClick
   end
@@ -53,7 +53,7 @@ object Admin: TAdmin
     Top = 0
     Width = 89
     Height = 89
-    Caption = 'btnuseless'
+    Caption = 'Useless'
     TabOrder = 3
     OnClick = btnuselessClick
   end
@@ -61,7 +61,6 @@ object Admin: TAdmin
     Active = True
     Connection = ADOConnection1
     CursorType = ctStatic
-    DataSource = DataSource1
     Parameters = <>
     SQL.Strings = (
       'Select * from Calendar')
@@ -88,6 +87,7 @@ object Admin: TAdmin
     Top = 152
   end
   object DataSource1: TDataSource
+    DataSet = ADOQuery1
     Left = 440
     Top = 152
   end
