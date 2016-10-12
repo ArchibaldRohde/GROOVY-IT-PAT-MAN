@@ -17,11 +17,13 @@ type
     btnuseless: TButton;
     procedure btnSQLClick(Sender: TObject);
     procedure btnuselessClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
 
     { Private declarations }
   public
-   yas : TButton;
+   arrbut : array [1..100] of TButton;
+   r : integer;
     { Public declarations }
   end;
 
@@ -47,13 +49,20 @@ end;
 procedure TAdmin.btnuselessClick(Sender: TObject);
 
 begin
-yas := TButton.Create(Admin);
-  yas.Width := 100;
-  yas.Height := 100;
-  yas.Left := 100;
-  yas.Top := 100;
-  yas.Visible := true;
-  yas.BringToFront;
+arrbut[r] := TButton.Create(Admin);
+ arrbut[r].Width := 100;
+  arrbut[r].Height := 100;
+  arrbut[r].Left := random(300);
+  arrbut[r].Top := random(300);
+  arrbut[r].Visible := true;
+  arrbut[r].BringToFront;
+  arrbut[r].Parent := Admin;
+  inc(r);
+end;
+
+procedure TAdmin.FormCreate(Sender: TObject);
+begin
+r := 1;
 end;
 
 end.

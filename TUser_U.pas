@@ -126,8 +126,6 @@ z := 1;
 
    end;
 
-
-
 end;
 
 function TUser.getBrushed: integer;

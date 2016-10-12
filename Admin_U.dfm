@@ -1,6 +1,6 @@
 object Admin: TAdmin
-  Left = 855
-  Top = 454
+  Left = 171
+  Top = 457
   Width = 700
   Height = 441
   Caption = 'Admin'
@@ -11,6 +11,7 @@ object Admin: TAdmin
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnCreate = FormCreate
   DesignSize = (
     684
     402)

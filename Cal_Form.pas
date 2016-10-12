@@ -93,6 +93,7 @@ i := 0;
        DMOD.DataModule1.TableCalendar['Day'] := FormatDateTime('ddddd', now);
        DMOD.DataModule1.TableCalendar['Activity'] := false;
    DMOD.DataModule1.TableCalendar.Post;
+   User.fillerup;
   end
   else
   begin
