@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 780
-  Top = 284
-  Width = 1040
+  Left = 275
+  Top = 142
+  Width = 1038
   Height = 784
   Caption = 'Main'
   Color = clBtnFace
@@ -13,14 +13,14 @@ object Form1: TForm1
   OldCreateOrder = False
   OnCreate = FormCreate
   DesignSize = (
-    1024
+    1022
     745)
   PixelsPerInch = 96
   TextHeight = 13
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 1025
+    Width = 1023
     Height = 745
     Anchors = [akLeft, akTop, akRight, akBottom]
     Picture.Data = {
@@ -7495,8 +7495,8 @@ object Form1: TForm1
     ParentFont = False
   end
   object RGBLang: TRadioGroup
-    Left = 72
-    Top = 528
+    Left = 48
+    Top = 336
     Width = 185
     Height = 73
     Caption = 'Language:'
@@ -7514,8 +7514,8 @@ object Form1: TForm1
     OnClick = RGBLangClick
   end
   object GBSign: TGroupBox
-    Left = 72
-    Top = 264
+    Left = 48
+    Top = 96
     Width = 145
     Height = 233
     Caption = 'GBSign'
@@ -7544,7 +7544,7 @@ object Form1: TForm1
     end
     object btnLogin: TButton
       Left = 6
-      Top = 136
+      Top = 128
       Width = 131
       Height = 25
       Caption = 'btnLogin'
@@ -7554,7 +7554,7 @@ object Form1: TForm1
     end
     object btnNew: TButton
       Left = 6
-      Top = 176
+      Top = 160
       Width = 131
       Height = 25
       Caption = 'btnNew'
@@ -7572,11 +7572,11 @@ object Form1: TForm1
     end
   end
   object Button1: TButton
-    Left = 928
-    Top = 704
+    Left = 80
+    Top = 296
     Width = 75
     Height = 25
-    Caption = 'Button1'
+    Caption = 'ADMIN'
     TabOrder = 2
     OnClick = Button1Click
   end

@@ -73,7 +73,8 @@ i := 0;
   DMOD.Datamodule1.TableCalendar.First;
   while NOT Dmod.DataModule1.TableCalendar.Eof do
   begin
-      if ((Dmod.DataModule1.TableCalendar['Day'] = FormatDateTime('m/d/y', now)) AND (Dmod.DataModule1.TableCalendar['User'] = User.getNaam)) then
+  ///ddddd
+      if ((Dmod.DataModule1.TableCalendar['Day'] = FormatDateTime('ddddd', now)) AND (Dmod.DataModule1.TableCalendar['User'] = User.getNaam)) then
       begin
        i := 1;
        break;
@@ -83,27 +84,27 @@ i := 0;
   DMOD.DataModule1.TableCalendar.Active := true;
   if i = 1 then
   begin
-  User.changeEntry(FormatDateTime('m/d/y', now),cbFloss.Checked,cbOggend.Checked,cbAand.Checked);
+  User.changeEntry(FormatDateTime('ddddd', now),cbFloss.Checked,cbOggend.Checked,cbAand.Checked);
    DMOD.DataModule1.TableCalendar.Edit;
    DMod.DataModule1.TableCalendar['Morning'] := cbOggend.Checked;
    DMod.DataModule1.TableCalendar['Night'] := cbAand.Checked;
    DMod.DataModule1.TableCalendar['Flossed'] := cbFloss.Checked;
        DMOD.DataModule1.TableCalendar['User'] := User.Getnaam;
-       DMOD.DataModule1.TableCalendar['Day'] := FormatDateTime('m/d/y', now);
+       DMOD.DataModule1.TableCalendar['Day'] := FormatDateTime('ddddd', now);
        DMOD.DataModule1.TableCalendar['Activity'] := false;
    DMOD.DataModule1.TableCalendar.Post;
   end
   else
   begin
-  User.newEntry(FormatDateTime('m/d/y', now),cbFloss.Checked,cbOggend.Checked,cbAand.Checked);
+  User.newEntry(FormatDateTime('ddddd', now),cbFloss.Checked,cbOggend.Checked,cbAand.Checked);
 
   DMOD.DataModule1.TableCalendar.Append;
    DMod.DataModule1.TableCalendar['Morning'] := cbOggend.Checked;
    DMod.DataModule1.TableCalendar['Night'] := cbAand.Checked;
    DMod.DataModule1.TableCalendar['Flossed'] := cbFloss.Checked;
        DMOD.DataModule1.TableCalendar['User'] := User.Getnaam;
-       DMOD.DataModule1.TableCalendar['Day'] := FormatDateTime('m/d/y', now);
-       DMOD.DataModule1.TableCalendar['UserDay'] := User.Getnaam + FormatDateTime('m/d/y', now);
+       DMOD.DataModule1.TableCalendar['Day'] := FormatDateTime('ddddd', now);
+       DMOD.DataModule1.TableCalendar['UserDay'] := User.Getnaam + FormatDateTime('ddddd', now);
        DMOD.DataModule1.TableCalendar['Activity'] := false;
    DMOD.DataModule1.TableCalendar.Post;
 

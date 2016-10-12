@@ -219,12 +219,12 @@ begin
 /////////////////////////////////////////////////////////////////////////////////////////////
 
 
-mydate := FormatDateTime('m/d/y', now);
+mydate := FormatDateTime('ddddd', now);
 for i := 1 to 3 do
 begin
     for k := 1 to 7 do
     begin
-     mydate2 := datetimetostr(strtodatetime(mydate) - ((i-1)*(7) + (k-1)));
+     mydate2 := FormatDateTime('ddddd', strtodatetime(mydate) - ((i-1)*(7) + (k-1)));
          Cal.SGCal.Cells[k,i] := mydate2;
 
     end;

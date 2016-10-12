@@ -1,6 +1,6 @@
 object Cal: TCal
-  Left = 610
-  Top = 472
+  Left = 499
+  Top = 269
   Width = 1340
   Height = 778
   Caption = 'Cal'
@@ -7506,7 +7506,7 @@ object Cal: TCal
     RowCount = 4
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
-    Font.Height = -7
+    Font.Height = -11
     Font.Name = 'Tahoma'
     Font.Style = []
     ParentFont = False
