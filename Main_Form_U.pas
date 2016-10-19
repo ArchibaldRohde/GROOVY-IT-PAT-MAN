@@ -77,7 +77,8 @@ begin
             arrCaptions[23] := 'Hierdie is die kalender!' + #10 + 'Hierop vertoon al die kere wat jy geborsel en gevlos het!' + #10 +
                                 'Druk die herlaai knoppie om nuwe data in te lees en om die kalender te herlaai!' + #10 +
                                 'Daarna kan jy die resultate knoppie druk en sien hoe jy sover vorder.' + #10 +
-                                'Jy kan ook met daardie knoppie die resultate na `n teksleër stoor.';
+                                'Jy kan ook met daardie knoppie die resultate na `n teksleër stoor.' +#10 + #10 + #10 +
+                                 'Sleutel:' + #10 + 'M : oggend' + #10 + 'N : Aand' + #10 + 'F : Gevlos';
        end;
   1 : begin arrCaptions[1] := 'Brace yourself';
             arrCaptions[2] := 'Language: ';
@@ -105,7 +106,8 @@ begin
             arrCaptions[23] := 'This is the Calendar' + #10 + 'This shows every time you brushed and flossed.' + #10 +
                                 'Press the refresh button to enter new data or simply to refresh the calendar!' + #10 +
                                 'Afterwards you can press the results button, which will tell you how you are doing!' + #10 +
-                                'From here you can also store data to a textfile';
+                                'From here you can also store data to a textfile' +#10 + #10 + #10 +
+                                 'Key:' + #10 + 'M : Morning' + #10 + 'N : Night' + #10 + 'F : Flossed';;
         end;
  end;
  lblTitel.Caption := arrCaptions[1];
@@ -148,7 +150,7 @@ begin
   val(sletter,c,i);
   if i = 0 then
   begin
-    showmessage('arrCaptions[11]');
+    showmessage(arrCaptions[11]);
     exit;
   end;
   end;

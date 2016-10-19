@@ -1,6 +1,6 @@
 object Cal: TCal
-  Left = 499
-  Top = 269
+  Left = 222
+  Top = 168
   Width = 1340
   Height = 778
   Caption = 'Cal'

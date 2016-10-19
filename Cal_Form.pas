@@ -46,6 +46,7 @@ procedure TCal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
 Self.Enabled := false;
 Form1.Visible := true;
+MediaPlayer1.Stop;
 end;
 
 procedure TCal.FormActivate(Sender: TObject);
